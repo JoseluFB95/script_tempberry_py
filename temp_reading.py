@@ -8,7 +8,7 @@ def main():
     """
     log_file = get_log_file()
     print('Temperature logging started.')
-    while(True):
+    while True:
         curr_temperature = get_cpu_temp()
         log_file.write (str(time.time()) + '  ' + str(curr_temperature) + '\n')
         time.sleep(60)
@@ -36,8 +36,8 @@ def get_cpu_temp():
 
 
 def get_log_file():
-    #Notify whether there is an existing log or not
-    if (os.path.isfile('temp_recording.log')):
+    # Notify whether there is an existing log or not
+    if os.path.isfile('temp_log.log'):
         print('Temperature logging will continue in the previous file.')
     else:
         print('No former file found. A new temperature log has been created.')
